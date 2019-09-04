@@ -1,9 +1,10 @@
-package com.ortiz.zomatoapp
+package com.ortiz.zomatoapp.ui
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.ortiz.zomatoapp.R
 
 class SplashActivity : AppCompatActivity() {
     private val SPLASH_TIME: Long = 1000
