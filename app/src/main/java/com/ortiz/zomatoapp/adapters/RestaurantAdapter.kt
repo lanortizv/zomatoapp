@@ -6,13 +6,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ortiz.zomatoapp.models.Restaurant
 import android.widget.TextView
-import com.ortiz.zomatoapp.R
 import android.view.LayoutInflater
+import com.ortiz.zomatoapp.R
 
 
-class RestaurantAdapter(items: ArrayList<Restaurant>) :
+class RestaurantAdapter :
     RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHolder>() {
-    var items: List<Restaurant> = items
+    var items: List<Restaurant>? = null
+        set(value) {
+            field = value
+        }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantViewHolder {
         val v = LayoutInflater.from(parent.context)
@@ -21,15 +24,14 @@ class RestaurantAdapter(items: ArrayList<Restaurant>) :
     }
 
     override fun getItemCount(): Int {
-        Log.d("cat", items.size.toString())
-        return items.size
+        Log.d("cat", items?.size.toString())
+        return items?.size ?: 0
     }
 
     override fun onBindViewHolder(holder: RestaurantViewHolder, position: Int) {
-        //Log.d("bind", items.)
-        holder.name.text = items[position].name
-        holder.location.text = items[position].location
-        holder.url.text = items[position].url
+        holder.name.text = items?.get(position)!!.name
+        holder.location.text = items?.get(position)?.location!!.city
+        holder.url.text = items?.get(position)!!.url
     }
 
 
@@ -39,4 +41,6 @@ class RestaurantAdapter(items: ArrayList<Restaurant>) :
         var url: TextView = itemView.findViewById(R.id.url)
 
     }
+
+
 }

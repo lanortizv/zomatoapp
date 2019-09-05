@@ -1,7 +1,17 @@
 package com.ortiz.zomatoapp.models
 
-class Restaurant(s: String, s1: String, s2: String) {
-    var name: String? = s
-    var location: String? = s1
-    var url: String? = s2
+import com.google.gson.annotations.Expose
+
+class Restaurant {
+    @Expose
+    var name: String? = null
+    @Expose
+    var location: Place? = null
+    @Expose
+    var url: String? = null
+}
+
+class Place {
+    @Expose
+    var city: String? = null
 }
