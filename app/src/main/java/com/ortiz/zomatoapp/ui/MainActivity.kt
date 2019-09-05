@@ -35,7 +35,6 @@ private fun initBottomNavigationView(
         Log.d("cat", menuItem.itemId.toString())
         when (menuItem.itemId) {
             R.id.action_search -> fragment = SearchFragment.newInstance()
-            R.id.action_favorites -> fragment = FavoritesFragment.newInstance()
             R.id.action_profile -> fragment = ProfileFragment.newInstance()
             else -> fragment = SearchFragment.newInstance()
         }
